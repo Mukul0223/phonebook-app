@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 
 let persons = [
     { 
@@ -57,7 +58,7 @@ const generateId = () => {
   return String(maxId + 1)
 }
 
-app.use(express.json())
+
 app.post('/api/phonebook', (request, response) => {
   try {
     const body = request.body
